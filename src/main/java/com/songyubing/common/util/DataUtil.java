@@ -1,5 +1,6 @@
 package com.songyubing.common.util;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -45,6 +46,23 @@ public class DataUtil {
 		c.add(Calendar.SECOND, -1);
 		
 		return c.getTime();
+	}
+	
+	public static Date getDate(Date mindate,Date maxdate){
+		//最小毫秒数
+		long min = mindate.getTime();
+		long max = maxdate.getTime();
+		long x = (long)(Math.random()*(max-min+1))+min;
+		return new Date(x);
+		
+	}
+	
+	public static void main(String[] args) {
+		Calendar c = Calendar.getInstance();
+		c.set(2018, 9,1);
+		Date date = DataUtil.getDate(c.getTime(),new Date());
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println(df.format(date));
 	}
 
 }
