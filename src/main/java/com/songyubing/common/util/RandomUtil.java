@@ -1,7 +1,6 @@
 package com.songyubing.common.util;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Random;
 
 public class RandomUtil {
